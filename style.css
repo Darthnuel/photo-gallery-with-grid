@@ -1,0 +1,29 @@
+/* This makes sure all the boxes dimensions are padded and bordered. Makes it easier to style the elements */
+*{
+    box-sizing: border-box;
+}
+
+/* convert the container to a grid */
+.container{
+    display: grid;
+    /* height: 100vh; */
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    grid-gap: 5px;
+    padding: 7px;
+    align-items: center;
+    grid-template-areas: 
+        "a b c d"
+        "e f g h"
+        "i j k l"
+        "m n o p"
+
+}
+.container > img{
+    max-width: 100%;
+}
+.container>img:nth-child(6){
+    grid-column: span 2;
+    grid-row: span 2;
+    grid-area: f/f/k/k;
+}
